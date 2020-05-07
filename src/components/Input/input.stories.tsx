@@ -18,7 +18,7 @@ const ControlledInput = () => {
 const defaultInput = () => (
   <>
     <Input style={{ width: '300px' }} placeholder="好看的input" onChange={action('changed')} />
-    {/* <ControlledInput /> */}
+    <ControlledInput />
   </>
 );
 

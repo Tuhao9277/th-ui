@@ -27,7 +27,7 @@ export const Input: FC<InputProps> = props => {
     'input-group-append': !!append,
   });
 
-  const fixControlledeValue = value => {
+  const fixControlledeValue = (value: any) => {
     if (typeof value === 'undefined' || value === null) {
       return '';
     }
@@ -47,4 +47,4 @@ export const Input: FC<InputProps> = props => {
     </div>
   );
 };
-export default Input
+export default Input;
