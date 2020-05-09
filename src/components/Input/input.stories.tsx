@@ -9,6 +9,22 @@ const defaultInput = () => (
 
 const disableedInput = () => <Input style={{ width: 300 }} placeholder="disabled Input" disabled />;
 
-storiesOf('Input component', module)
-  .add('Input', defaultInput)
-  .add('被禁用的Input', disableedInput);
+const sizeInput = () => (
+  <>
+    <Input style={{ width: 300,marginBottom: 16 }} placeholder="large size" size="lg" />
+    <br/>
+    <Input style={{ width: 300 }} placeholder="small size" size="sm" />
+  </>
+);
+
+const pandInput = () => (
+  <>
+    <Input style={{ width: 300,marginBottom: 16 }} placeholder="thdax.com" prepend="https://" append=".com" />
+  </>
+);
+
+storiesOf('Input输入框', module)
+  .add('常规Input', defaultInput)
+  .add('被禁用的Input', disableedInput)
+  .add('两种大小', sizeInput)
+  .add('前后缀', pandInput);

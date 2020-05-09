@@ -75,3 +75,7 @@
   border-top-left-radius: $raduis;
   border-bottom-left-radius: $raduis;
 }
+
+@mixin border-width-zero($direction) {
+  border-#{$direction}-width: 0;
+}

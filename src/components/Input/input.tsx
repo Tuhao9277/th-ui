@@ -22,7 +22,7 @@ export const Input: FC<InputProps> = props => {
   const cnames = classNames('th-input-wrapper', {
     [`input-size-${size}`]: size,
     'is-disabled': disabled,
-    'input-group': prepend || append,
+    'th-input-group-wrapper': prepend || append,
     'input-group-prepend': !!prepend,
     'input-group-append': !!append,
   });
@@ -39,12 +39,16 @@ export const Input: FC<InputProps> = props => {
     restProps.value = fixControlledeValue(props.value);
   }
   return (
-    <div className={cnames} style={style}>
-      {prepend && <div className="th-input-group-prepend">{prepend}</div>}
-      {icon && <div className="icon-wrapper"> </div>}
-      <input className="th-input-inner" disabled={disabled} {...restProps} />
-      {append && <div className="th-input-group-append">{append}</div>}
-    </div>
+    <span className={cnames} style={style}>
+      {prepend && <span className="th-input-group-prepend">{prepend}</span>}
+      {icon && <span className="icon-wrapper"> </span>}
+      <input
+        className={classNames('th-input-inner', { 'th-input-inner-disabled': disabled })}
+        disabled={disabled}
+        {...restProps}
+      />
+      {append && <span className="th-input-group-append">{append}</span>}
+    </span>
   );
 };
 export default Input;

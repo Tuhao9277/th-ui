@@ -1,6 +1,6 @@
 $white:#fff !default;
 $gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
+$gray-200: #fafafa !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
@@ -63,8 +63,8 @@ $font-family-base: $font-family-sans-serif !default;
 // 字体大小
 
 $font-size-base: 1rem !default;
-$font-size-sm: $font-size-base * 1.25 !default;
-$font-size-lg: $font-size-base * .875 !default;
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-sm: $font-size-base * .875 !default;
 $font-size-root: null !default;
 
 // 字重

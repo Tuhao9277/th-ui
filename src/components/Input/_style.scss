@@ -1,8 +1,7 @@
 .th-input-wrapper {
-  display: flex;
   width: 100%;
-  margin-bottom: 30px;
   position: relative;
+  display: inline-block;
 
   .icon-wrapper {
     position: absolute;
@@ -48,29 +47,64 @@
     box-shadow: $input-focus-box-shadow;
   }
 
+  &:hover {
+    color: $input-focus-color;
+    border-color: $primary;
+  }
+
   &::placeholder {
     color: $input-placeholder-color;
     opacity: 1;
   }
 
+  &-disabled {
+    &:hover {
+      border-color: $input-border-color;
+    }
+  }
+
   &:disabled,
   &[readonly] {
+    cursor: not-allowed;
     background-color: $input-disabled-bg;
-    border-color: $input-disabled-border-color;
+    border-color: $input-border-color;
     opacity: 1;
+
+    &:hover {
+      border-color: $input-border-color;
+    }
+
+  }
+
+}
+
+.th-input-group-wrapper {
+  display: table;
+  position: relative;
+  vertical-align: top;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  .th-input-inner {
+    float: left;
+    margin-bottom: 0;
   }
 }
 
 .th-input-group-prepend,
 .th-input-group-append {
-  display: flex;
-  align-items: center;
-  padding: $input-padding-y $input-padding-x;
+  &.th-input-inner {
+    display: table-cell;
+  }
+
+  display: table-cell;
+  padding: 0 $input-padding-x;
   margin-bottom: 0;
   font-size: $input-font-size;
   font-weight: $font-weight-normal;
   line-height: $input-line-height;
   color: $input-group-addon-color;
+  vertical-align: middle;
   text-align: center;
   white-space: nowrap;
   background-color: $input-group-addon-bg;
@@ -83,23 +117,32 @@
   border: 0;
 }
 
-.input-group>.th-input-group-prepend,
-.input-group>.th-input-group-append>.th-input-inner {
+.th-input-group-wrapper>.th-input-group-prepend,
+.th-input-group-wrapper.input-group-append>.th-input-inner {
   @include border-right-radius(0)
 }
 
-.input-group>.th-input-group-append,
-.input-group>.th-input-group-prepend>.th-input-inner {
-  @include border-right-radius(0)
+.th-input-group-wrapper>.th-input-group-append,
+.th-input-group-wrapper.input-group-prepend>.th-input-inner {
+  @include border-left-radius(0)
 }
 
-.input-size-sm>.th-input-inner {
+.th-input-group-wrapper.input-group-prepend>.th-input-group-prepend {
+  @include border-width-zero('right')
+}
+
+.th-input-group-wrapper.input-group-append>.th-input-group-append {
+  @include border-width-zero('left')
+}
+
+
+.input-size-sm .th-input-inner {
   padding: $input-padding-y-sm $input-padding-x-sm;
   font-size: $input-font-size-sm;
   border-radius: $input-border-radius-sm;
 }
 
-.input-size-lg>.th-input-inner {
+.input-size-lg .th-input-inner {
   padding: $input-padding-y-lg $input-padding-x-lg;
   font-size: $input-font-size-lg;
   border-radius: $input-border-radius-lg;
