@@ -14,14 +14,14 @@ module.exports = ({ config }) => {
           shouldExtractLiteralValuesFromEnum: true,
           propFilter: prop => {
             if (prop.parent) {
-              return !prop.parent.fileName.includes('node_modules');
+              return !prop.parent.fileName.includes('node_modules')
             }
-            return true;
+            return true
           },
         },
       },
     ],
-  });
-  config.resolve.extensions.push('.ts', '.tsx');
-  return config;
-};
+  })
+  config.resolve.extensions.push('.ts', '.tsx')
+  return config
+}

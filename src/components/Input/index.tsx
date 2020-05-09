@@ -1,2 +1,4 @@
-import Input from './input';
-export default Input;
+// TODO: remove this lint
+import Input from './input'
+
+export default Input

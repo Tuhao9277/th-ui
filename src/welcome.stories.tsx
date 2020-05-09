@@ -1,5 +1,6 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+
 storiesOf('Welcome page', module).add(
   'welcome',
   () => {
@@ -15,7 +16,7 @@ storiesOf('Welcome page', module).add(
           </a>
         </div>
       </>
-    );
+    )
   },
   { info: { disable: true } },
-);
+)
