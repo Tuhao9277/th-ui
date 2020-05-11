@@ -8,8 +8,8 @@
 
 @mixin button-style($background,
 $border,
-  $color,
-  $hover-background: lighten($background, 10.5%),
+$color,
+$hover-background: lighten($background, 10.5%),
   $hover-border: lighten($border, 10%),
   $hover-color: $color) {
   color: $color;
@@ -39,8 +39,8 @@ $border,
 
 @mixin zoom-animation($direction: 'top',
 $scaleStart: scaleY(0),
-  $scaleEnd: scaleY(1),
-  $origin: center top) {
+$scaleEnd: scaleY(1),
+$origin: center top) {
   .zoom-in-#{$direction}-enter {
     transform: $scaleStart;
     opacity: 0;

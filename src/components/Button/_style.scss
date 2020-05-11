@@ -38,19 +38,24 @@
   }
 
   &-lg {
-    @include button-size($btn-height-lg,$btn-padding-y-lg, $btn-font-size-lg, $btn-border-radius-lg); }
+    @include button-size($btn-height-lg,$btn-padding-y-lg, $btn-font-size-lg, $btn-border-radius-lg);
+  }
 
   &-sm {
-    @include button-size($btn-height-sm,$btn-padding-y-sm,$btn-font-size-sm, $btn-border-radius-sm); }
+    @include button-size($btn-height-sm,$btn-padding-y-sm,$btn-font-size-sm, $btn-border-radius-sm);
+  }
 
   &-primary {
-    @include button-style($primary, $primary, $white); }
+    @include button-style($primary, $primary, $white);
+  }
 
   &-default {
-    @include button-style($white, $gray-400, $body-color, $white, $primary, $primary); }
+    @include button-style($white, $gray-400, $body-color, $white, $primary, $primary);
+  }
 
   &-danger {
-    @include button-style($danger, $danger, $white); }
+    @include button-style($danger, $danger, $white);
+  }
 
   &-link {
     font-weight: $font-weight-normal;
