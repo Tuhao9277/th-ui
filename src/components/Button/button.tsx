@@ -2,7 +2,7 @@ import React, { FC, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 import classNames from 'classnames'
 import { tuple } from '../_utils/types'
 
-export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
+export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'dashed'
 export type ButtonSize = 'sm' | 'lg'
 const ButtonShape = tuple('circle', 'circle-outline', 'round')
 export type ButtonShape = typeof ButtonShape[number]

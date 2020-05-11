@@ -12,7 +12,7 @@
   touch-action: manipulation;
   border: $btn-border-width solid transparent;
 
-  @include button-size($btn-height-base, $btn-padding-y-base, $btn-font-size, $btn-border-radius-base);
+  @include button-size($btn-height-base, $btn-padding-x-base, $btn-font-size, $btn-border-radius-base);
   box-shadow: $btn-box-shadow;
   cursor: pointer;
   transition: $btn-transition;
@@ -56,6 +56,10 @@
   &-danger {
     @include button-style($danger, $danger, $white);
   }
+  &-dashed {
+    @include button-style($white, $gray-400, $body-color, $white, $primary, $primary);
+    border-style: dashed;
+  }
 
   &-link {
     font-weight: $font-weight-normal;
@@ -66,12 +70,14 @@
     &:hover {
       color: $btn-link-hover-color;
       text-decoration: $link-hover-decoration;
+      outline: 0;
     }
 
     &:focus,
     &.focus {
       text-decoration: $link-hover-decoration;
       box-shadow: none;
+      outline: 0;
     }
 
     &:disabled,

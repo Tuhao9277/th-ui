@@ -211,9 +211,9 @@ $btn-height-base: $height-base;
 $btn-height-lg: $height-lg;
 $btn-height-sm: $height-sm;
 
-$btn-padding-y-base: $padding-md -1px !default;
-$btn-padding-y-md: $padding-sm !default;
-$btn-padding-y-lg: $btn-padding-y-base !default;
+$btn-padding-x-base: $padding-md - 1px !default;
+$btn-padding-x-md: $padding-sm !default;
+$btn-padding-x-lg: $btn-padding-x-base !default;
 
 $btn-circle-size: $btn-height-base;
 
