@@ -56,6 +56,7 @@
   &-danger {
     @include button-style($danger, $danger, $white);
   }
+
   &-dashed {
     @include button-style($white, $gray-400, $body-color, $white, $primary, $primary);
     border-style: dashed;
