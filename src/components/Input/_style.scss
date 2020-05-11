@@ -26,7 +26,8 @@
 
 .th-input-inner {
   width: 100%;
-  padding: $input-padding-y $input-padding-x;
+  min-width: 0;
+  padding: $input-padding-y-base $input-padding-x-base;
   color: $input-color;
   font-weight: $input-font-weight;
   font-size: $input-font-size;
@@ -135,12 +136,12 @@
 
 .input-size-sm .th-input-inner {
   padding: $input-padding-y-sm $input-padding-x-sm;
-  font-size: $input-font-size-sm;
+  font-size: $font-size-sm;
   border-radius: $input-border-radius-sm;
 }
 
 .input-size-lg .th-input-inner {
   padding: $input-padding-y-lg $input-padding-x-lg;
-  font-size: $input-font-size-lg;
+  font-size: $font-size-lg;
   border-radius: $input-border-radius-lg;
 }

@@ -1,0 +1,78 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  user-select: none;
+  touch-action: manipulation;
+  border: $btn-border-width solid transparent;
+
+  @include button-size($btn-height-base, $btn-padding-y-base, $btn-font-size, $btn-border-radius-base);
+  box-shadow: $btn-box-shadow;
+  cursor: pointer;
+  transition: $btn-transition;
+
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+    box-shadow: none;
+
+    > * {
+      pointer-events: none;
+    }
+  }
+
+  &-circle,
+  &-circle-outline {
+    @include btn-circle();
+  }
+
+  &-round {
+    @include btn-round();
+  }
+
+  &-lg {
+    @include button-size($btn-height-lg,$btn-padding-y-lg, $btn-font-size-lg, $btn-border-radius-lg); }
+
+  &-sm {
+    @include button-size($btn-height-sm,$btn-padding-y-sm,$btn-font-size-sm, $btn-border-radius-sm); }
+
+  &-primary {
+    @include button-style($primary, $primary, $white); }
+
+  &-default {
+    @include button-style($white, $gray-400, $body-color, $white, $primary, $primary); }
+
+  &-danger {
+    @include button-style($danger, $danger, $white); }
+
+  &-link {
+    font-weight: $font-weight-normal;
+    color: $btn-link-color;
+    text-decoration: $link-decoration;
+    box-shadow: none;
+
+    &:hover {
+      color: $btn-link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+
+    &:focus,
+    &.focus {
+      text-decoration: $link-hover-decoration;
+      box-shadow: none;
+    }
+
+    &:disabled,
+    &.disabled {
+      color: $btn-link-disabled-color;
+      pointer-events: none;
+    }
+  }
+}
