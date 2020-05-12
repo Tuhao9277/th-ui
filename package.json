@@ -55,6 +55,7 @@
     "lint:style": "stylelint --fix \"src/**/*.scss\" --syntax scss",
     "build": "npm run clean && npm run build-ts && npm run build-css ",
     "test": "react-scripts test",
+    "test-all": "./scripts/test-all.sh",
     "test:nowatch": "cross-env CI=true react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier -c --write '**/*'",
