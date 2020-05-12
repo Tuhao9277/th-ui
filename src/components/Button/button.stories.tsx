@@ -4,12 +4,16 @@ import { storiesOf } from '@storybook/react'
 import Button from './button'
 
 const defaultButton = () => (
-  <div style={{ display: 'flex', width: 500, justifyContent: 'space-between' }}>
+  <div style={{ display: 'flex', width: 700, justifyContent: 'space-between' }}>
     <Button onClick={action('change')}>Default</Button>
-    <Button type="primary">primary</Button>
+    <Button loading type="primary">
+      Loading
+    </Button>
+    <Button type="primary">Primary</Button>
     <Button type="danger">danger</Button>
     <Button type="link">link</Button>
     <Button type="dashed">dashed</Button>
+    <Button disabled>Disabled</Button>
   </div>
 )
 

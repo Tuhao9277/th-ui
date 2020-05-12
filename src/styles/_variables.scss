@@ -30,54 +30,47 @@ $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
 
-$theme-colors: ('primary': $primary,
-'secondary': $secondary,
-'success': $success,
-'info': $info,
-'warning': $warning,
-'danger': $danger,
-'light': $light,
-'dark': $dark,
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark,
 );
 
 // vertical paddings
-$padding-lg:24px;
-$padding-md:16px;
-$padding-sm:12px;
+$padding-lg: 24px;
+$padding-md: 16px;
+$padding-sm: 12px;
 
-$control-padding-x:$padding-sm;
+$control-padding-x: $padding-sm;
 
 // height rules
 
-$height-base:32px;
-$height-lg:40px;
-$height-sm:24px;
+$height-base: 32px;
+$height-lg: 40px;
+$height-sm: 24px;
 
-$font-family-sans-serif: -apple-system,
-  blinkmacsystemfont,
-  'Segoe UI',
-  roboto,
-  'Helvetica Neue',
-  arial,
-  'Noto Sans',
-  sans-serif,
-  'Apple Color Emoji',
-  'Segoe UI Emoji',
-  'Segoe UI Symbol',
+$font-family-sans-serif: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue',
+  arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
   'Noto Color Emoji' !default;
-$font-family-monospace: sfmono-regular,
-  menlo,
-  monaco,
-  consolas,
-  'Liberation Mono',
-  'Courier New',
+$font-family-monospace: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New',
   monospace !default;
 $font-family-base: $font-family-sans-serif !default;
 
-// 字体大小
+$component-background: #fff;
+$background-color-base: #f4f4f4; // Default grey background color
+$border-color-base: #d8d8d8;
 
+$disabled-color: fade(#000, 25%);
+$disabled-bg: $background-color-base;
+
+// 字体大小
 $font-size-base: 14px !default;
-$font-size-lg: $font-size-base+2px !default;
+$font-size-lg: $font-size-base + 2px !default;
 $font-size-sm: 12px !default;
 $font-size-root: null !default;
 
@@ -224,14 +217,17 @@ $btn-font-size-sm: $font-size-sm !default;
 $btn-padding-y-lg: 0.5rem !default;
 $btn-font-size-lg: $font-size-lg !default;
 
+$btn-disable-bg: $disabled-bg;
+$btn-disable-color: $disabled-color;
+$btn-disable-border: $border-color-base;
+
 // 按钮边框
 
 $btn-border-width: $border-width-base !default;
 
 // 按钮其他
 
-$btn-box-shadow: inset 0 1px rgba($white, 0.15),
-  0 1px 1px rgba($black, 0.075) !default;
+$btn-box-shadow: inset 0 1px rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
 $btn-disabled-opacity: 0.65 !default;
 
 // 链接按钮
@@ -244,18 +240,14 @@ $btn-border-radius-base: $border-radius !default;
 $btn-border-radius-lg: $border-radius-lg !default;
 $btn-border-radius-sm: $border-radius-sm !default;
 
-$btn-transition: color 0.15s ease-in-out,
-  background-color 0.15s ease-in-out,
-  border-color 0.15s ease-in-out,
-  box-shadow 0.15s ease-in-out !default;
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
 
 // menu
 $menu-border-width: $border-width-base !default;
 $menu-border-color: $border-color !default;
-$menu-box-shadow: inset 0 1px 0 rgba($white, 0.15),
-  0 1px 1px rgba($black, 0.075) !default;
-$menu-transition: color 0.15s ease-in-out,
-  border-color 0.15s ease-in-out !default;
+$menu-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
+$menu-transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out !default;
 
 //menu-item
 
@@ -267,13 +259,12 @@ $menu-item-disabled-color: $gray-600 !default;
 
 //sub-menu
 //submenu
-$submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12),
-  0 0 6px 0 rgba(0, 0, 0, 0.04);
+$submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
 
 //input
-$input-height-base:$height-base;
-$input-height-lg:$height-lg;
-$input-height-sm:$height-sm;
+$input-height-base: $height-base;
+$input-height-lg: $height-lg;
+$input-height-sm: $height-sm;
 
 $input-padding-x: $control-padding-x - 1px !default;
 
@@ -281,9 +272,15 @@ $input-padding-x-base: $input-padding-x;
 $input-padding-x-sm: $input-padding-x / 2;
 $input-padding-x-lg: $input-padding-x;
 
-$input-padding-y-base: max(round(($input-height-base -$font-size-base *$line-height-base)/2 *10) /10 - $border-width-base, 3px);
-$input-padding-y-sm: max(round(($input-height-sm - $font-size-base * $line-height-base) /2 * 10) /10 -$border-width-base, 0);
-$input-padding-y-lg: ceil(($input-height-lg - $font-size-lg * $line-height-base) /2 * 10) /10 -$border-width-base;
+$input-padding-y-base: max(
+  round(($input-height-base -$font-size-base * $line-height-base)/2 * 10) / 10 - $border-width-base,
+  3px
+);
+$input-padding-y-sm: max(
+  round(($input-height-sm - $font-size-base * $line-height-base) /2 * 10) / 10 -$border-width-base,
+  0
+);
+$input-padding-y-lg: ceil(($input-height-lg - $font-size-lg * $line-height-base) /2 * 10) / 10 -$border-width-base;
 
 $input-font-family: $btn-font-family !default;
 $input-font-size: $btn-font-size !default;

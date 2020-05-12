@@ -1,47 +1,3 @@
-@mixin button-size($height, $padding-x, $font-size, $border-radius) {
-  $padding-y: max(
-    round(($height - $font-size * $line-height-base) / 2 * 10) / 10 - $border-width-base,
-    0
-  );
-  height: $height;
-  padding: $padding-y $padding-x;
-  font-size: $font-size;
-  border-radius: $border-radius;
-}
-
-@mixin button-style(
-  $background,
-  $border,
-  $color,
-  $hover-background: lighten($background, 10.5%),
-  $hover-border: lighten($border, 10%),
-  $hover-color: $color
-) {
-  color: $color;
-  background: $background;
-  border-color: $border;
-
-  &:hover {
-    color: $hover-color;
-    background: $hover-background;
-    border-color: $hover-border;
-  }
-
-  &:focus,
-  &.focus {
-    color: $hover-color;
-    background: $hover-background;
-    border-color: $hover-border;
-  }
-
-  &:disabled,
-  &.disabled {
-    color: $color;
-    background: $background;
-    border-color: $border;
-  }
-}
-
 @mixin zoom-animation(
   $direction: 'top',
   $scaleStart: scaleY(0),
@@ -86,16 +42,4 @@
 
 @mixin border-width-zero($direction) {
   border-#{$direction}-width: 0;
-}
-
-@mixin btn-circle() {
-  padding-left: 0;
-  padding-right: 0;
-  min-width: $btn-height-base;
-  text-align: center;
-  border-radius: 50%;
-}
-
-@mixin btn-round() {
-  @include button-size($btn-circle-size, $btn-circle-size / 2, $font-size-base, $btn-circle-size);
 }
