@@ -29,12 +29,12 @@ interface BaseButtonProps {
 }
 
 type NativeButtonProps = {
-  onClick: MouseEventHandler<HTMLElement>
+  onClick?: MouseEventHandler<HTMLElement>
 } & BaseButtonProps &
   Omit<ButtonHTMLAttributes<HTMLElement>, 'type' | 'onClick'>
 type AnchorButtonProps = {
   href: string
-  onClick: MouseEventHandler<HTMLElement>
+  onClick?: MouseEventHandler<HTMLElement>
 } & BaseButtonProps &
   Omit<AnchorHTMLAttributes<any>, 'type' | 'onClick'>
 
