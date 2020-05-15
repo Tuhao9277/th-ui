@@ -8,6 +8,7 @@ import React, {
 } from 'react'
 import classNames from 'classnames'
 import { tuple } from '../_utils/types'
+import LoadingIcon from './LoadingIcon'
 
 export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'dashed'
 export type ButtonSize = 'sm' | 'lg'
@@ -24,6 +25,9 @@ interface BaseButtonProps {
   loading?: boolean | { delay: number }
   /** 设置 button 造型 */
   shape?: ButtonShape
+  /** 设置button的icon */
+  icon?: React.ReactNode
+  block?: boolean
   children: React.ReactNode
   className?: string
 }
@@ -52,12 +56,15 @@ const Button: FC<ButtonProps> = props => {
     disabled,
     loading,
     onClick,
+    block,
+    icon,
     ...restProps
   } = props
   const cname = classNames('btn', className, {
     [`btn-${type}`]: type,
     [`btn-${size}`]: size,
     [`btn-${shape}`]: shape,
+    [`btn-${block}`]: block,
     [`btn-loading`]: loading,
     disabled: type === 'link' && disabled,
   })
@@ -77,11 +84,13 @@ const Button: FC<ButtonProps> = props => {
   }, [loading, btnLoading])
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => {
-    if (loading) return
+    if (btnLoading) return
     if (onClick) {
       ;(onClick as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>)(e)
     }
   }
+  const iconNode =
+    icon && !btnLoading ? icon : <LoadingIcon existIcon={!!icon} loading={btnLoading} />
 
   if (type === 'link' && href) {
     return (
@@ -92,7 +101,8 @@ const Button: FC<ButtonProps> = props => {
   }
   return (
     <button onClick={handleClick} className={cname} disabled={disabled} {...restProps}>
-      {children}
+      {iconNode}
+      <span>{children}</span>
     </button>
   )
 }

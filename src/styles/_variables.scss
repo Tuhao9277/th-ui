@@ -41,6 +41,13 @@ $theme-colors: (
   'dark': $dark,
 );
 
+// vertical margins
+$margin-lg: 16px; // containers
+$margin-md: 8px; // small containers and buttons
+$margin-sm: 8px; // Form controls and items
+$margin-xs: 4px; // small items
+$margin-xss: 0px; // more small
+
 // vertical paddings
 $padding-lg: 24px;
 $padding-md: 16px;
@@ -226,6 +233,8 @@ $btn-disable-border: $border-color-base;
 $btn-border-width: $border-width-base !default;
 
 // 按钮其他
+
+$btn-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
 
 $btn-box-shadow: inset 0 1px rgba($white, 0.15), 0 1px 1px rgba($black, 0.075) !default;
 $btn-disabled-opacity: 0.65 !default;

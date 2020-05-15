@@ -13,6 +13,7 @@
   user-select: none;
   touch-action: manipulation;
   border: $btn-border-width solid transparent;
+  box-shadow: $btn-shadow;
 
   @include button-size(
     $btn-height-base,
@@ -20,9 +21,8 @@
     $btn-font-size,
     $btn-border-radius-base
   );
-  box-shadow: $btn-box-shadow;
   cursor: pointer;
-  transition: $btn-transition;
+  transition: all 0.3s ease-in-out;
 
   &::before {
     position: absolute;
@@ -67,6 +67,12 @@
     }
   }
 
+  > i,
+  > span {
+    display: inline-block;
+    pointer-events: none;
+  }
+
   &-loading {
     position: relative;
 
@@ -77,6 +83,14 @@
     &::before {
       display: block;
     }
+
+    &-icon {
+      padding-right: $margin-xs;
+    }
+  }
+
+  &-block {
+    width: 100%;
   }
 
   &-circle,

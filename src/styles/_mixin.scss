@@ -29,6 +29,35 @@
       opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
   }
 }
+@mixin scale-animation(
+  $direction: 'center',
+  $scaleStart: scale(0),
+  $scaleEnd: scale(1),
+  $origin: center center
+) {
+  .scale-in-#{$direction}-enter {
+    transform-origin: $origin;
+    transform: $scaleStart;
+  }
+
+  .scale-in-#{$direction}-enter-active {
+    transform: $scaleEnd;
+    transform-origin: $origin;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.1s,
+      opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
+  }
+
+  .scale-in-#{$direction}-exit {
+    transform: $scaleEnd;
+  }
+
+  .scale-in-#{$direction}-exit-active {
+    transform: $scaleStart;
+    transform-origin: $origin;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.1s,
+      opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
+  }
+}
 
 @mixin border-right-radius($raduis) {
   border-top-right-radius: $raduis;
