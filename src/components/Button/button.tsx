@@ -10,7 +10,7 @@ import classNames from 'classnames'
 import { tuple } from '../_utils/types'
 import LoadingIcon from './LoadingIcon'
 
-export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'dashed'
+export type ButtonType = 'primary' | 'default' | 'danger' | 'link' | 'dashed' | 'wave'
 export type ButtonSize = 'sm' | 'lg'
 const ButtonShape = tuple('circle', 'circle-outline', 'round')
 export type ButtonShape = typeof ButtonShape[number]

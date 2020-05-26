@@ -113,7 +113,7 @@ $body-color: $gray-900 !default;
 $body-text-align: null !default;
 
 // Spacing
-$spacer: 1rem !default;
+$spacer: 2px !default;
 
 $headings-margin-bottom: $spacer / 2 !default;
 $headings-font-family: null !default;
@@ -124,7 +124,7 @@ $headings-color: null !default;
 
 // Paragraphs
 
-$paragraph-margin-bottom: 1rem !default;
+$paragraph-margin-bottom: 2px !default;
 
 // 字体其他部分 heading list hr 等等
 $headings-margin-bottom: $spacer / 2 !default;
@@ -159,8 +159,8 @@ $hr-color: inherit !default;
 $hr-height: 1px !default;
 $hr-opacity: 0.25 !default;
 
-$legend-margin-bottom: 0.5rem !default;
-$legend-font-size: 1.5rem !default;
+$legend-margin-bottom: 1px !default;
+$legend-font-size: 2px !default;
 $legend-font-weight: null !default;
 
 $mark-padding: 0.2em !default;
@@ -169,7 +169,7 @@ $dt-font-weight: $font-weight-bold !default;
 
 $nested-kbd-font-weight: $font-weight-bold !default;
 
-$list-inline-padding: 0.5rem !default;
+$list-inline-padding: 1px !default;
 
 $mark-bg: #fcf8e3 !default;
 
@@ -221,7 +221,7 @@ $btn-circle-size: $btn-height-base;
 $btn-padding-y-sm: 2px !default;
 $btn-font-size-sm: $font-size-sm !default;
 
-$btn-padding-y-lg: 0.5rem !default;
+$btn-padding-y-lg: 1px !default;
 $btn-font-size-lg: $font-size-lg !default;
 
 $btn-disable-bg: $disabled-bg;
@@ -260,11 +260,14 @@ $menu-transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out !defau
 
 //menu-item
 
-$menu-item-padding-y: 0.5rem !default;
-$menu-item-padding-x: 1rem !default;
+$menu-item-padding-y: 10px !default;
+$menu-item-padding-x: 14px !default;
 $menu-item-active-color: $primary !default;
+$menu-item-active-background: lighten($primary, 43%) !default;
 $menu-item-active-border-width: 2px !default;
 $menu-item-disabled-color: $gray-600 !default;
+
+$menu-item-height-base: 40px;
 
 //sub-menu
 //submenu
@@ -313,7 +316,7 @@ $input-border-radius-sm: $border-radius-sm !default;
 
 $input-focus-bg: $input-bg !default;
 $input-focus-border-color: lighten($primary, 25%) !default;
-$input-focus-width: 0.2rem !default;
+$input-focus-width: 2px !default;
 $input-focus-color: $input-color !default;
 $input-focus-shadow-color: rgba($primary, 0.25) !default;
 $input-focus-box-shadow: 0 0 0 $input-focus-width $input-focus-shadow-color !default;
