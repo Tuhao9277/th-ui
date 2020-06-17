@@ -9,7 +9,9 @@ const defaultButton = () => (
 
     <Button type="primary">Primary</Button>
     <Button type="danger">danger</Button>
-    <Button type="link">link</Button>
+    <Button type="link" href="#">
+      link
+    </Button>
     <Button type="dashed">dashed</Button>
     <Button disabled>Disabled</Button>
   </div>
